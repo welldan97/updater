@@ -3,12 +3,16 @@
 set -e
 
 main() {
-  sudo -v
   case "$1" in
-    count | help | list | update)
+    count | list | update)
+    ;;
+    help)
+      help
+      exit 0
     ;;
     *)
-      echo "ERROR: unknown action \"$1\""
+      echo "ERROR: unknown command \"$1\""
+      help
       exit 1
       ;;
   esac
@@ -46,6 +50,25 @@ main() {
       echo ""
     fi
   done
+}
+
+help() {
+ cat << EOF
+Usage:
+  updater update [updater]
+  updater list [updater] [--no-fetch]
+  updater count [updater] [--no-fetch]
+
+Commands:
+  update   Update everything
+  list     List available updates
+  count    Count available updates
+
+Options:
+  [updater]    Updater you want to use for command, i.e. brew
+  --no-fetch   Try not to fetch info about new updates, and show the result of
+               the previous command run without this argument
+EOF
 }
 
 updaters() {
