@@ -41,7 +41,9 @@ main() {
           "$updater_handle-list" "$no_fetch" | wc -l | sed -e 's/^[ \t]*//'
           ;;
         list)
-          "$updater_handle-list" "$no_fetch"
+          "$updater_handle-list" "$no_fetch" | while read -r line; do
+            echo "  $line";
+          done
           ;;
         update)
           "$updater_handle-update"
@@ -58,11 +60,13 @@ Usage:
   updater update [updater]
   updater list [updater] [--no-fetch]
   updater count [updater] [--no-fetch]
+  updtear help
 
 Commands:
   update   Update everything
   list     List available updates
   count    Count available updates
+  help     Show help
 
 Options:
   [updater]    Updater you want to use for command, i.e. brew
