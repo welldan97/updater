@@ -12,7 +12,7 @@ further with i.e. launchd.
 
 Updater is made for OS X, but I guess it can work with Linuxes too.
 
-Supported updaters:
+Out of the box updaters:
 
 1. brew
 2. brew cask
