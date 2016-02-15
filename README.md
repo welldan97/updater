@@ -89,6 +89,10 @@ Customization
 You can have a look to [current updaters][updaters] available to implement your
 own.
 
+---
 
-[updaters]: https://github.com/welldan97/updater/tree/master/updater.d
+Originally extracted from [welldan97/dotfiles][welldan97-dotfiles]
+
 [emacs-prelude]: https://github.com/bbatsov/prelude
+[updaters]: https://github.com/welldan97/updater/tree/master/updater.d
+[welldan97-dotfiles]: https://github.com/welldan97/dotfiles
