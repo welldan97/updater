@@ -39,7 +39,7 @@ git clone https://github.com/welldan97/updater.git
 ```
 
 And then make sure that `updater` is in your `$PATH`. `updater.d` should be
-in the same dir as `updater`, otherwhise you can specify your own path by
+in the same directory as `updater`, otherwhise you can specify your own path by
 setting `$UPDATER_PATH`.
 
 Usage
