@@ -6,7 +6,7 @@ main() {
   case "$1" in
     count | list | update)
     ;;
-    help)
+    help | '')
       help
       exit 0
     ;;
