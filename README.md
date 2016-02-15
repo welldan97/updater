@@ -47,13 +47,13 @@ Usage
 $ updater list
 
 Brew:
- ffmpeg
- fontconfig
- freetype
- imagemagick
- watchman
- youtube-dl
- zsh-completions
+  ffmpeg
+  fontconfig
+  freetype
+  imagemagick
+  watchman
+  youtube-dl
+  zsh-completions
 
 Brew Cask:
   dockertoolbox
