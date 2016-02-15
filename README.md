@@ -2,10 +2,11 @@ Updater
 =======
 
 Updater is here for making updates a little bit easier. Right now there are
-quite a lot of different pieces needed to be babysitted and updated in different
-ways and different sources, using different package managers. This wher updater
-comes into play it helps updating using one command `updater update`, and that's
-it. You can then run it every week or even automate further with i.e. launchd.
+quite a lot of different pieces needed to be used and updated in different
+ways and from different sources or using different package managers. This is
+where updater comes into play it helps updating using one command
+`updater update`, and that's it. Then you can run it every week or automate even
+further with i.e. launchd.
 
 Updater is made for OS X, but I guess it can work with Linuxes too.
 
@@ -36,14 +37,14 @@ git clone https://github.com/welldan97/updater.git
 ```
 
 And then make sure that `updater` is in your `$PATH`. `updater.d` should be
-in the same dir as `updater`, otherwhise you can specifay your own path by
+in the same dir as `updater`, otherwhise you can specify your own path by
 setting `$UPDATER_PATH`.
 
 Usage
 -----
 
 ```bash
-  $ updater list
+$ updater list
 
 Brew:
  ffmpeg
@@ -71,7 +72,7 @@ OSX Software:
 ```
 
 ```bash
-  $ updater update
+$ updater update
 ```
 
 `update` — Update everything
