@@ -1,6 +1,8 @@
 Updater
 =======
 
+![Updater](updater.png)
+
 Updater is here for making updates a little bit easier. Right now there are
 quite a lot of different pieces needed to be used and updated in different
 ways and from different sources or using different package managers. This is
