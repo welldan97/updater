@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 
 EMACS_PATH="$HOME/.emacs.d"
+EMACS_BIN_PATH="/Applications/Emacs.app/Contents/MacOS/Emacs"
+
+LISP_TO_UPDATE=$(cat <<- LISP
+  (progn
+    (defadvice prelude-update (around stfu compile activate)
+      (flet ((yes-or-no-p (&rest args) t)
+             (y-or-n-p (&rest args) t))
+       ad-do-it))
+    (prelude-update)
+    (kill-emacs))
+LISP
+)
 
 updater-emacs-prelude-name() {
   echo 'Emacs Prelude'
@@ -11,17 +23,15 @@ updater-emacs-prelude-detect() {
 }
 
 updater-emacs-prelude-update() {
-  echo 'Not Implemented'
-  #/Applications/Emacs.app/Contents/MacOS/Emacs --eval '(prelude-update)'
+  echo "$LISP_TO_UPDATE"
+  $EMACS_BIN_PATH --eval "$LISP_TO_UPDATE"
 }
 
-
 updater-emacs-prelude-list() {
-  cd "$EMACS_PATH"
+  cd "$EMACS_PATH" || exit
+
   if [ "$(updater-emacs-prelude-git-incomming | wc -l)" -gt 0 ]; then
-    echo true
-  else
-    echo false
+    echo Needs update
   fi
 }
 
