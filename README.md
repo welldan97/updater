@@ -18,9 +18,9 @@ Out of the box updaters:
 2. brew cask
 3. osx-software
 4. oh-my-zsh
-5. ~~node packages~~(coming soon)
-6. ~~ruby gems~~(coming soon)
-7. [~~emacs prelude~~][emacs-prelude](coming soon)
+5. [emacs prelude][emacs-prelude]
+6. ~~node packages~~(coming soon)
+5. ~~ruby gems~~(coming soon)
 
 Installation
 ------------
