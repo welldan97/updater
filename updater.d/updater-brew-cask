@@ -10,8 +10,8 @@ updater-brew-cask-detect() {
 
 updater-brew-cask-update() {
   brew cask update
-  updater-brew-cask-list | while read -r CASK; do
-    brew cask install "$CASK"
+  updater-brew-cask-list | while read -r cask; do
+    brew cask install "$cask"
   done
 }
 
