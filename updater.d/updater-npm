@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+updater-npm-name() {
+  echo 'NPM'
+}
+
+UPDATER_NPM_NOTICE=$(cat <<-EOF
+NOTICE: npm was detected, but to make updater it needs "npm-check-updates"
+which you can get from https://github.com/tjunnone/npm-check-updates
+EOF
+)
+
+updater-npm-detect() {
+  which npm > /dev/null
+  if ! which npm-check-updates > /dev/null; then
+    echo "$UPDATER_NPM_NOTICE"
+    return 1
+  fi
+}
+
+updater-npm-update() {
+  updater-npm-list | while read -r package; do
+    npm install -g "$package"
+  done
+}
+
+updater-npm-list() {
+  npm-check-updates -g | grep '^ ' | sed 's/^ *\([^ ]*\) .*/\1/'
+}

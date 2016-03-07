@@ -19,7 +19,7 @@ Out of the box updaters:
 3. osx-software
 4. oh-my-zsh
 5. [emacs prelude][emacs-prelude]
-6. ~~node packages~~(coming soon)
+6. npm
 5. ~~ruby gems~~(coming soon)
 
 Installation
