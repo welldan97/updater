@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+updater-mas-name() {
+  echo 'MAS'
+}
+
+updater-mas-detect() {
+  which mas > /dev/null
+}
+
+updater-mas-update() {
+  mas upgrade
+}
+
+updater-mas-list() {
+  mas outdated | cut -d ' ' -f 2- | sed -e 's/ (.*)$//g'
+}
