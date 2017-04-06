@@ -17,7 +17,7 @@ updater-brew-cask-update() {
 
 updater-brew-cask-list() {
   if [ "$1" != '--no-fetch' ]; then
-    brew cask update > /dev/null
+    brew update > /dev/null
   fi
 
   brew cask list | while read -r CASK; do
