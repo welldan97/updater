@@ -60,7 +60,7 @@ Usage:
   updater update [updater]
   updater list [updater] [--no-fetch]
   updater count [updater] [--no-fetch]
-  updtear help
+  updater help
 
 Commands:
   update   Update everything
