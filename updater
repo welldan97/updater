@@ -3,6 +3,7 @@
 set -e
 
 main() {
+  use-sudo
   case "$1" in
     count | list | update)
     ;;
@@ -97,6 +98,11 @@ this-script-location() {
   done
   DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
   echo "$DIR"
+}
+
+use-sudo() {
+  sudo -v
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 }
 
 main "$@"
