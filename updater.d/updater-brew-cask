@@ -9,10 +9,8 @@ updater-brew-cask-detect() {
 }
 
 updater-brew-cask-update() {
-  brew cask update
-  updater-brew-cask-list | while read -r cask; do
-    brew cask install "$cask"
-  done
+  brew update
+  brew cask upgrade
 }
 
 updater-brew-cask-list() {
@@ -20,9 +18,5 @@ updater-brew-cask-list() {
     brew update > /dev/null
   fi
 
-  brew cask list | while read -r CASK; do
-    if brew cask info "$CASK" | grep -qF 'Not installed'; then
-      echo "$CASK"
-    fi
-  done
+  brew cask outdated
 }
